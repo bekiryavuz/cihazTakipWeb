@@ -1,0 +1,73 @@
+<header>
+    <div class="navbar navbar-expand-sm bg-info navbar-dark">
+        <div class="container">
+            <a href="{% url 'index' %}" class="navbar-brand">Cihaz Takip Uygulamasi</a>
+            <ul class="navbar-nav mr-auto">
+                <li 
+                    {% if 'cihazgiris' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'cihazgiris' %}" class="nav-link ">Cihaz Giris</a>
+                </li>
+                <li 
+                    {% if 'cihazara' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'cihazara' %}" class="nav-link ">Cihaz Ara</a>
+                </li>
+                <li 
+                    {% if 'genelanaliz' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'genelanaliz' %}" class="nav-link ">Genel Analiz</a>
+                </li>
+                <!-- <li 
+                    {% if 'geneldurum' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'geneldurum' %}" class="nav-link ">Genel Durum</a>
+                </li>-->
+                <li 
+                    {% if 'dokumanlar' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'dokumanlar' %}" class="nav-link ">Dokumanlar</a>
+                </li>
+                <li 
+                    {% if 'telefonlar' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'telefonlar' %}" class="nav-link ">Telefonlar</a>
+                </li>
+                <!--
+                <li 
+                    {% if 'about' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}  
+                >
+                    <a href="{% url 'about' %}" class="nav-link ">About</a>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+</header>

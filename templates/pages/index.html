@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    
+
+
+<div class="container">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <td colspan="12" class="table-info" style="text-align: center;"><b> CİHAZ LİSTESİ</b></td>
+            </tr>
+        </thead>
+        <thead>
+            <tr class="table-success">
+                <th>Bt Numarası</th>
+                <th>Domain Adı</th>
+                <th>İşyeri</th>
+                <th>Cihaz Türü</th>
+                <th>Marka Adı</th>
+                <th>Geliş Nedeni</th>
+                <th>Yapılan İşlem</th>
+                <th>Görevli</th>
+                <th>Geliş Tarihi</th>
+                <th>Teslim Tarihi</th>
+                <th>Cihaz Sahibi</th>
+                <th>Cihaz Durumu</th>
+            </tr>
+        </thead>
+        <tbody >
+            {%for cihaz in cihazlar %}
+                <tr>
+                    <td>{{cihaz.btNumarasi}}</td>
+                    <td>{{cihaz.domainAdi}}</td>
+                    <td>{{cihaz.isyeri}}</td>
+                    <td>{{cihaz.cihazTuru}}</td>
+                    <td>{{cihaz.markaAdi}}</td>
+                    <td>{{cihaz.gelisNedeni}}</td>
+                    <td>{{cihaz.yapilanIs}}</td>
+                    <td>{{cihaz.gorevli}}</td>
+                    <td>{{cihaz.gelisTarihi}}</td>
+                    <td>{{cihaz.teslimTarihi}}</td>
+                    <td>{{cihaz.cihazSahibi}}</td>
+                    <td>{{cihaz.cihazDurum}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

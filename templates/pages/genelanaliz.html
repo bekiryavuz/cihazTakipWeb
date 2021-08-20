@@ -1,0 +1,180 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<form class="d-flex" method=POST action="{% url 'cihazTarihBul' %}">
+  <div class="input-group" >
+      {% csrf_token %}
+      <input type="date" id="gelisTarihi" class="form-control " name="gelisTarihi" >
+      <input type="date" id="teslimTarihi" class="form-control  " name="teslimTarihi" >
+      <button type="submit" value="Submit" class="btn  btn-success">ara</button>
+          
+     
+  </div>
+</form>
+
+<br>
+
+
+
+    <div class="row">
+      <div class="card col-md-6">
+        <div class="">
+          <html>
+      <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+    
+          function drawChart() {
+            var arizaSiyah = parseInt({{arizaSiyah}});
+            var arizaAg = parseInt({{arizaAg}});
+            var arizaGuc = parseInt({{arizaGuc}});
+            var arizaMavi = parseInt({{arizaMavi}});
+            var arizaBoot = parseInt({{arizaBoot}});
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Siyah Ekran Sorunu',     arizaSiyah],
+              ['Ağ 2 Sorunu',      arizaAg],
+              ['Güç Kesintisi',  arizaGuc],
+              ['Mavi Ekran Sorunu', arizaMavi],
+              ['Boot Sorunu',    arizaBoot]
+            ]);
+    
+            var options = {
+              title: 'TOPLAM ARIZA DAĞILIMI',
+              pieSliceText: 'value'
+            };
+    
+            var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+    
+            chart.draw(data, options);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="pie-chart" style="width: 530px; height: 450px;"></div>
+      </body>
+      </html>
+          <div>
+            <form class="d-flex" method=POST action="{% url 'getPdfPage' %}">
+            {% csrf_token %}
+            <input type="date" id="gelisTarihi" class="form-control  me-2" name="gelisTarihi" >
+            <input type="date" id="teslimTarihi" class="form-control ml-2 me-2" name="teslimTarihi" >
+            <button type="submit" id="toplamAriza" name="toplamAriza" value="Submit" class="btn ml-2 btn-success">raporla</button>
+            </form>
+          </div>
+            
+        </div>
+      </div>
+      <div class="card col-md-6">
+        <div class="">
+          <html>
+          <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var bekir = parseInt({{dataBekir}});
+            var nugman = parseInt({{dataNugman}});
+            var hamdi = parseInt({{dataHamdi}});
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Month'],
+                ['Bekir Yavuz',     bekir],
+                ['Nugman Aydın',      nugman],
+                ['Hamdi Ödemiş',  hamdi]
+               
+            ]);
+    
+            var options = {
+              title: 'TOPLAM İŞ YÜKÜ',
+              pieSliceText: 'value'
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="piechart" style="width: 530px; height: 450px;"></div>
+      </body>
+      <form class="d-flex" method=POST action="{% url 'getPdfPage' %}">
+        {% csrf_token %}
+        <input type="date" id="gelisTarihi" class="form-control  me-2" name="gelisTarihi" >
+        <input type="date" id="teslimTarihi" class="form-control ml-2 me-2" name="teslimTarihi" >
+        <button type="submit" id="toplamIs" name="toplamIs" value="Submit" class="btn ml-2 btn-success">raporla</button>
+      </form>
+          </html>
+        </div>
+      </div>
+      
+      
+    </div>
+    <div class="row " >
+      <div class="card col-md-12">
+        <div class=" "style=" margin:0 auto;">
+          <html>
+        <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+    
+          function drawChart() {
+            var isyeriMali = parseInt({{isyeriMali}});
+            var isyeriDestek = parseInt({{isyeriDestek}});
+            var isyeriPersonel = parseInt({{isyeriPersonel}});
+            var isyeriEmlak = parseInt({{isyeriEmlak}});
+            var isyeriBakim = parseInt({{isyeriBakim}});
+            var isyeriModernizasyon = parseInt({{isyeriModernizasyon}});
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Mali İşler',     isyeriMali],
+              ['Destek Hizmetleri',      isyeriDestek],
+              ['Personel Müdürlüğü',  isyeriPersonel],
+              ['Emlak Servisi', isyeriEmlak],
+              ['Bakım Servisi', isyeriBakim]
+            ]);
+    
+            var options = {
+              title: 'ARIZALI CİHAZ GÖNDEREN SERVİSLER',
+              pieSliceText: 'value'
+            };
+    
+            var chart = new google.visualization.PieChart(document.getElementById('pie-chart3'));
+    
+            chart.draw(data, options);
+          }
+        </script>
+      </head>
+      <body>
+        <div id="pie-chart3" style="width: 530px; height: 450px;"></div>
+      </body>
+      <form class="d-flex" method=POST action="{% url 'getPdfPage' %}">
+        {% csrf_token %}
+        <input type="date" id="gelisTarihi" class="form-control  me-2" name="gelisTarihi" >
+        <input type="date" id="teslimTarihi" class="form-control ml-2 me-2" name="teslimTarihi" >
+        <button type="submit" id="toplamServis" name="toplamServis" value="Submit" class="btn ml-2 btn-success">raporla</button>
+      </form>
+          </html>
+        </div>
+      </div>
+      
+      
+    </div>
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+

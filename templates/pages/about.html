@@ -1,0 +1,148 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+    
+<form >
+    
+
+    
+
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="clear-fix">
+                <div class="w-25 float-left">
+                    <div class="form-group">
+                        <label for="btNo">BT Numarası </label>
+                        <input type="text" id="btNo" class=" form-control">
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="domainAdi">Domain Adı </label>
+                        <input type="text" id="domainAdi" class="form-control"> 
+                    </div>
+                </div>
+                <div class="w-50 float-left pl-2">
+                    <div class="form-group">
+                        <label for="isyeri" class="">İşyeri Adı </label>
+                        <input type="text" id="isyeri" class="form-control"> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clear-fix mt-3">
+                <div class="w-25 float-left">
+                    <div class="form-group">
+                        <label for="cihazTuru">Cihaz Türü</label>
+                        <input type="text" id="cihazTuru" class="form-control" >
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="markaAdi">Marka Adı</label>
+                        <input type="text" id="markaAdi" class="form-control"> 
+                    </div>
+                </div>
+                <div class="w-50 float-left pl-2">
+                    <div class="form-group">
+                        <label for="gorevli">Görevli</label>
+                        <select name="gorevli" id="gorevli" class="form-control">
+                            <option value="gorevli1">Gorevli1</option>
+                            <option value="gorevli2">Gorevli2</option>
+                            <option value="gorevli3">Gorevli3</option>
+                            <option value="gorevli4">Gorevli4</option>
+                        </select> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clear-fix mt-3">
+                <div class="w-50 float-left ">
+                    <div class="form-group">
+                        <label for="gelisNedeni">Geliş Nedeni</label>
+                        <textarea name="gelisNedeni" id="gelisNedeni" cols="20" rows="2" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="w-50 float-left pl-2">
+                    <div class="form-group">
+                        <label for="yapilanIs">Yapılan İş</label>
+                        <textarea name="yapilanIs" id="yapilanIs" cols="20" rows="2" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="clear-fix mt-3">
+                <div class="w-25 float-left ">
+                    <div class="form-group">
+                        <label for="date">Geliş Tarihi</label>
+                        <input type="date" id="gelisTarihi" class="form-control">
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="date">Teslim Tarihi</label>
+                        <input type="date" id="teslimTarihi" class="form-control">
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="cihazSahibi">Cihaz Sahibi</label>
+                        <input type="text" id="cihazSahibi" class="form-control">
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="cihazDurum">Cihaz Durum</label>
+                        <select name="cihazDurum" id="cihazDurum" class="form-control">
+                            <option value="hazir">Hazır</option>
+                            <option value="hazirDegil">Hazır Değil</option>
+                        </select> 
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="card-body">
+            <div class="w-25 btn-group float-right">
+                <button class="btn btn-outline-primary " data-toggle="modal" data-target="#cihazKaydet" type="button">Kaydet</button>
+                <div class="modal fade" id="cihazKaydet">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Cihaz Girişi</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                Cihaz Kaydedilmiştir.
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" type="button" data-dismiss="modal">Kapat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+    
+
+
+
+
+    
+
+    
+    
+
+
+
+      
+</form>
+
+
+
+
+
+
+
+{% endblock %}

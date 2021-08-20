@@ -1,0 +1,144 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+ 
+{% if submitted %}
+    Kayıt gerçekleştirildi.
+
+{% else %}
+
+
+
+<form action="" method=POST>
+    {% csrf_token %}
+    
+
+    
+   
+    
+    
+    
+
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="clear-fix">
+                <div class="w-25 float-left">
+                    <div class="form-group">
+                        <label for="btNo">BT Numarası </label>
+                        {{ form.btNumarasi }}
+                        
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="domainAdi">Domain Adı </label>
+                        {{ form.domainAdi }}
+                        
+                    </div>
+                </div>
+                <div class="w-50 float-left pl-2">
+                    <div class="form-group">
+                        <label for="isyeri" class="">İşyeri Adı </label>
+                        {{ form.isyeri }}
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clear-fix mt-3">
+                <div class="w-25 float-left">
+                    <div class="form-group">
+                        <label for="cihazTuru">Cihaz Türü</label>
+                        {{ form.cihazTuru }}
+                        
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="markaAdi">Marka Adı</label>
+                        {{ form.markaAdi }}
+                        
+                    </div>
+                </div>
+                <div class="w-50 float-left pl-2">
+                    <div class="form-group">
+                        <label for="gorevli">Görevli</label>
+                        {{ form.gorevli }}
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clear-fix mt-3">
+                <div class="w-50 float-left ">
+                    <div class="form-group">
+                        <label for="gelisNedeni">Geliş Nedeni</label>
+                        {{ form.gelisNedeni }}
+                       
+                    </div>
+                </div>
+                <div class="w-50 float-left pl-2">
+                    <div class="form-group">
+                        <label for="yapilanIs">Yapılan İş</label>
+                        {{ form.yapilanIs }}
+                        
+                    </div>
+                </div>
+            </div>
+        
+            <div class="clear-fix mt-3">
+                <div class="w-25 float-left ">
+                    <div class="form-group">
+                        <label for="date">Geliş Tarihi</label>
+                        {{ form.gelisTarihi }}
+                        
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="date">Teslim Tarihi</label>
+                        {{ form.teslimTarihi }}
+                        
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="cihazSahibi">Cihaz Sahibi</label>
+                        {{ form.cihazSahibi }}
+                        
+                    </div>
+                </div>
+                <div class="w-25 float-left pl-2">
+                    <div class="form-group">
+                        <label for="cihazDurum">Cihaz Durum</label>
+                        {{ form.cihazDurum }}
+                        
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="card-body">
+            <div class="w-25 btn-group float-right">
+                <button type="submit" value="Submit" class=" btn btn-success"> cihaz kaydet</button>
+                
+            </div>
+        </div>
+    
+    
+
+
+
+
+    
+
+    
+    
+
+
+
+      
+</form>
+{% endif %}
+
+
+{% endblock %}

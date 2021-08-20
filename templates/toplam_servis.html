@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ARIZALI CİHAZ GÖNDEREN SERVİSLER</title>
+<h1 style="text-align:center;">ARIZALI CİHAZ GÖNDEREN SERVİSLER</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+
+  @page { 
+    size: letter;
+    margin: 2cm;
+  }
+  @font-face {
+    font-family: Roboto;
+    src: url('C:/Roboto-Regular.ttf'); /*Full path */
+    font-weight: bold;
+    font-size: 12px;
+  }
+  h1{
+    font-size: 20px;
+  }
+  body{
+    font-family: Roboto;
+    src: url('C:/Roboto-Regular.ttf'); /*Full path */
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
+  #servis {
+    
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #servis td, #servis th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #servis th {
+    height:50px;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+  }
+  
+  </style>
+  
+</head>
+<body>
+  <br><br>  
+  <div>
+    <h2>Başlangıç Tarihi: &nbsp;&nbsp;&nbsp;  {{gelis}}</h2>
+    <h2>Bitiş Tarihi: &nbsp;&nbsp;&nbsp; {{teslim}}</h2>
+  </div>
+  
+  
+  <br>
+<div class="container">
+    <table id="servis">
+    <tr>
+        <th>Servis Adı</th>
+        <th>Gönderim Miktarı</th>
+    </tr> 
+    {%for servis in servis%}
+    <tr>
+        <td>{{servis.1}}</td>
+        <td style="text-align:center;">{{servis.0}}</td>
+    </tr>
+    {%endfor%}  
+   
+</table>
+</div>    
+</div>    
+<br><br><br><br>
+
+<div>
+  <h2><p style="text-align:right;"> Rapor Tarihi:&nbsp;&nbsp;&nbsp; {{date}}</p></h2>
+</div>
+</body>
+</html>

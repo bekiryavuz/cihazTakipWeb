@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <td colspan="12" class="table-info" style="text-align: center;"><b>PERSONEL TELEFON LİSTESİ</b> </td>
+        </tr>
+    </thead>
+    <thead>
+        <tr class="table-success">
+            <th>İşyeri</th>
+            <th>Personel İsmi</th>
+            <th>Personel Telefonu</th>
+        </tr>
+    </thead>
+    <tbody >
+        {%for tel in telefonlar %}
+            <tr>
+                <td>{{tel.isyeri}}</td>
+                <td>{{tel.personelAdi}} {{tel.personelSoyadi}}</td>
+                <td>{{tel.personelTelefon}}</td>
+            </tr>
+        {%endfor%}
+    </tbody>
+    
+</table>
+
+{% endblock %}
