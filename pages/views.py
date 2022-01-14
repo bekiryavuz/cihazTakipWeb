@@ -55,8 +55,8 @@ def getPdfPage(request):
     dataHamdi = Cihazlar.objects.all().filter(gorevli=3,gelisTarihi__gte=gelis, teslimTarihi__lte=teslim).count()
     personel = [
         [dataBekir,'Bekir Yavuz'],
-        [dataNugman, 'Nugman Aydın'],
-        [dataHamdi,'Hamdi Ödemiş'],
+        [dataNugman, 'Nugman Perkin'],
+        [dataHamdi,'Hamdi Peker'],
     ]
     personel = sorted(personel, reverse=True)
 
